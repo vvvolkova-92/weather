@@ -3,10 +3,11 @@
   /* background-image: linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%); */
   /* background-image: url(./images/no-geo.jpg); */
   object-fit: cover;
-  object-position: center;
+  object-position: center center;
   background-repeat: no-repeat;
   background: linear-gradient(rgba(0,0,0,0.15),rgba(0,0,0,0.15)),url('./images/no-geo.jpg');
   color: #FFF;
+  min-height: 566px;
 }
 
 .app__snow {
@@ -33,17 +34,26 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
+  justify-content: space-evenly;
   /* overflow: hidden; */
   margin: 0 auto;
-  padding-top: 40px;
-  height: 100vh;
+  padding: 40px 0 40px;
   max-width: calc(100% - 20px);
 }
 
+.country {
+  margin: 0;
+  font-size: 50px;
+}
+
 .weather {
+  margin-top: 40px;
   display: flex;
   align-items: center;
+  justify-content: space-evenly;
   flex-direction: column;
+  height: 100%;
+  min-height: 400px;
 }
 
 .input {
@@ -58,18 +68,35 @@
 }
 
 .temp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   min-height: 100px;
-  min-width: 250px;
+  width: 100%;
+  max-width: calc(100% - 40px);
   background-color: rgba(255, 255, 255, 0.4);
   font-size: 70px;
   text-align: center;
   box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 0.2);
 }
 
+.description {
+  margin: 0;
+}
+
+.feels_like {
+  margin: 20px 0 0 0;
+}
+
 @media (min-width : 425px) {
 
   .container {
       max-width: calc(100% - 40px);
+  }
+
+  .temp {
+    max-width: calc(100% - 80px);
+    min-height: 150px;
   }
       
 }
@@ -80,6 +107,13 @@
     padding-top: 70px;
     max-width: calc(100% - 100px);
   }
+
+  .temp {
+    margin: 40px 0 40px;
+    max-width: 420px;
+    min-height: 220px;
+    font-size: 100px;
+  }
       
 }
 
@@ -89,6 +123,10 @@
     padding-top: 100px;
     max-width: calc(100% - 200px);
   }
+
+  .App {
+    min-height: 630px;
+  }
       
 }
 
@@ -97,6 +135,30 @@
   .container {
     padding-top: 100px;
     max-width: 900px
+  }
+
+  .App {
+    min-height: 768px;
+  }
+
+  .description {
+    font-size: 25px;
+    margin: 0;
+  }
+  
+  .feels_like {
+    font-size: 20px;
+    margin: 40px 0 10px 0;
+  }
+      
+}
+
+@media (min-width : 1440px) {
+
+  .App {
+    height: 100%;
+    min-height: 900px;
+    max-height: 1000px;
   }
       
 }
